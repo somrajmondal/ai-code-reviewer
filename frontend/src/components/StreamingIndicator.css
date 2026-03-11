@@ -1,0 +1,49 @@
+.streaming-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.streaming-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface2);
+}
+
+.streaming-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: pulse 1s ease infinite;
+}
+
+.streaming-label {
+  font-size: .8rem;
+  color: var(--gold);
+  letter-spacing: .05em;
+}
+
+.streaming-preview {
+  padding: 16px;
+  font-size: .75rem;
+  line-height: 1.7;
+  color: var(--muted);
+  min-height: 120px;
+  overflow: hidden;
+  font-family: var(--font-code);
+}
+
+.stream-line {
+  display: block;
+  animation: stream-in .1s ease both;
+}
+
+.stream-cursor {
+  color: var(--gold);
+  animation: pulse .7s step-end infinite;
+}

@@ -1,0 +1,61 @@
+.issue-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.issue-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.issue-sev {
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border: 1px solid;
+  border-radius: 2px;
+}
+
+.issue-line {
+  font-size: .7rem;
+  color: var(--muted);
+  background: var(--faint);
+  padding: 2px 8px;
+  border-radius: 2px;
+}
+
+.issue-text {
+  font-size: .85rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.issue-fix {
+  display: flex;
+  gap: 8px;
+  background: var(--faint);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: .8rem;
+}
+
+.issue-fix-label {
+  color: var(--green);
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.issue-fix-text {
+  color: var(--text);
+  line-height: 1.5;
+}

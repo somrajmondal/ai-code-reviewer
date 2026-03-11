@@ -1,0 +1,59 @@
+.ic {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--ac);
+  border-radius: 6px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  animation: fadeUp .3s ease both;
+}
+
+.ic-header { display: flex; align-items: center; gap: 8px; }
+
+.ic-sev {
+  font-family: var(--font-code);
+  font-size: .6rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ac);
+  background: var(--bg);
+  border: 1px solid var(--ac);
+  padding: 2px 7px;
+  border-radius: 2px;
+  opacity: .9;
+}
+
+.ic-line {
+  font-family: var(--font-code);
+  font-size: .65rem;
+  color: var(--muted);
+  background: var(--surface3);
+  padding: 2px 7px;
+  border-radius: 2px;
+}
+
+.ic-issue {
+  font-size: .85rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.ic-fix {
+  display: flex;
+  gap: 8px;
+  background: var(--surface3);
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-size: .8rem;
+  line-height: 1.55;
+  color: var(--text2);
+}
+
+.ic-fix-arrow {
+  color: var(--green);
+  font-weight: 700;
+  flex-shrink: 0;
+}

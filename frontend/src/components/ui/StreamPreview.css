@@ -1,0 +1,61 @@
+.sp {
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.sp-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface2);
+}
+
+.sp-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--cyan);
+  animation: pulse 1.2s ease infinite;
+}
+
+.sp-label {
+  font-size: .78rem;
+  color: var(--cyan);
+  font-family: var(--font-code);
+  letter-spacing: .03em;
+}
+
+.sp-anim {
+  margin-left: auto;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.sp-anim span {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--cyan);
+  animation: pulse 1s ease infinite;
+}
+.sp-anim span:nth-child(2) { animation-delay:.2s; }
+.sp-anim span:nth-child(3) { animation-delay:.4s; }
+
+.sp-body {
+  padding: 14px 16px;
+  font-size: .75rem;
+  line-height: 1.8;
+  color: var(--muted);
+  font-family: var(--font-code);
+  min-height: 120px;
+  overflow: hidden;
+}
+
+.sp-line { display: block; animation: fadeIn .08s ease both; }
+
+.sp-cursor {
+  color: var(--cyan);
+  animation: blink .7s step-end infinite;
+}
