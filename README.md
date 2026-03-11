@@ -2,7 +2,7 @@
 
 > Paste any code. Get an instant, structured AI review covering bugs, security vulnerabilities, performance issues, and style — streamed live token-by-token.
 
-**Live Demo:** [[your-url.vercel.app](https://your-url.vercel.app)  ](https://ai-code-reviewer-sage-eight.vercel.app/)
+**Live Demo:** (https://ai-code-reviewer-sage-eight.vercel.app/)
 **Stack:** Flask · React 18 · OpenAI GPT-4o · Vercel
 
 ---
