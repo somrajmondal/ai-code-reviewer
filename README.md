@@ -94,34 +94,7 @@ The React dev server proxies `/api/*` to Flask automatically.
 
 ---
 
-## Run Tests
 
-```bash
-cd backend
-pytest test_app.py -v
-```
-
-Expected: **25 tests pass**
-
----
-
-## Deploy to Vercel
-
-```bash
-# 1. Build React
-cd frontend && npm run build
-
-# 2. Install Vercel CLI
-npm i -g vercel
-
-# 3. Add OpenAI key to Vercel
-vercel secrets add openai_api_key sk-your-key-here
-
-# 4. Deploy from project root
-cd .. && vercel --prod
-```
-
----
 
 ## API Reference
 
