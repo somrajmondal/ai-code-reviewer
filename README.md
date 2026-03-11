@@ -3,7 +3,7 @@
 > Paste any code. Get an instant, structured AI review covering bugs, security vulnerabilities, performance issues, and style — streamed live token-by-token.
 
 **Live Demo:** (https://ai-code-reviewer-sage-eight.vercel.app/)
-**Stack:** Flask · React 18 · OpenAI GPT-4o · Vercel
+**Stack:** Flask · React 18 · OpenAI GPT-4o-mini · Vercel
 
 ---
 
@@ -25,7 +25,7 @@
 | Layer | Technology |
 |-------|-----------|
 | Backend | Flask 3.0, Python 3.11 |
-| AI | OpenAI GPT-4o (streaming) |
+| AI | OpenAI GPT-4o-mini (streaming) |
 | Frontend | React 18, vanilla CSS |
 | Deployment | Vercel (hobby tier) |
 | Testing | pytest |
@@ -71,13 +71,12 @@ codelens-pro/
 ### Prerequisites
 - Python 3.11+
 - Node.js 18+
-- OpenAI API key ([get one here](https://platform.openai.com/api-keys))
+- OpenAI API key 
 
 ### 1. Backend
 ```bash
 cd backend
-pip install -r requirements.txt
-cp .env.example .env
+pip install -r requirements.txt .env
 # Edit .env — add your OPENAI_API_KEY
 python app.py
 # → http://localhost:5000
