@@ -1,7 +1,4 @@
-"""
-Simple in-memory sliding-window rate limiter.
-No Redis required — fits Vercel free tier.
-"""
+
 import time
 from collections import defaultdict, deque
 from functools import wraps

@@ -1,7 +1,4 @@
-"""
-Builds structured OpenAI prompts for code review.
-Centralised here so prompts are versioned and testable.
-"""
+
 
 FOCUS_DESCRIPTIONS = {
     "all":         "Review everything: bugs, security, performance, style, and best practices.",

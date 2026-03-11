@@ -1,8 +1,4 @@
-"""
-In-memory review history store.
-Keyed by session_id (stored in browser localStorage).
-Max 20 reviews per session, 500 sessions total.
-"""
+
 import time
 import uuid
 from collections import OrderedDict

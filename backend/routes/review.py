@@ -1,24 +1,19 @@
 import os
 import json
-import sys
-import time
 from flask import Blueprint, request, Response, jsonify
 from openai import OpenAI
 
-# Add parent to path for utils imports
-sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
-from utils.rate_limiter import rate_limit, review_limiter
-from utils.prompts      import SYSTEM_PROMPT, build_user_prompt, FOCUS_DESCRIPTIONS
-from utils.history_store import store
+# Absolute imports for utils
+from backend.utils.rate_limiter import rate_limit, review_limiter
+from backend.utils.prompts import SYSTEM_PROMPT, build_user_prompt, FOCUS_DESCRIPTIONS
+from backend.utils.history_store import store
 
 review_bp = Blueprint("review", __name__)
 
 _api_key = os.environ.get("OPENAI_API_KEY")
-client   = OpenAI(api_key=_api_key) if _api_key else None
-
+client = OpenAI(api_key=_api_key) if _api_key else None
 
 def _validate(data: dict) -> tuple[str | None, int]:
-    """Returns (error_message, status_code) or (None, 200) if valid."""
     code = (data.get("code") or "").strip()
     if not code:
         return "No code provided.", 400
@@ -31,12 +26,10 @@ def _validate(data: dict) -> tuple[str | None, int]:
         return "OPENAI_API_KEY is not configured on the server.", 503
     return None, 200
 
-
 @review_bp.route("/api/review", methods=["POST"])
 @rate_limit(review_limiter)
 def review():
     data = request.get_json(silent=True) or {}
-
     err, status = _validate(data)
     if err:
         return jsonify({"error": err}), status
@@ -48,8 +41,6 @@ def review():
     sid      = data.get("session_id")
 
     user_prompt = build_user_prompt(code, language, focus, filename)
-
-    # Accumulate full response for history
     accumulated = []
 
     def generate():
@@ -72,7 +63,6 @@ def review():
                     accumulated.append(token)
                     yield f"data: {json.dumps({'token': token})}\n\n"
 
-            # Parse and save to history
             full = "".join(accumulated)
             try:
                 clean  = full.strip().lstrip("```json").lstrip("```").rstrip("```").strip()
@@ -88,7 +78,7 @@ def review():
                         "result":   parsed,
                     })
             except Exception:
-                pass  # history save failure is non-fatal
+                pass
 
             yield "data: [DONE]\n\n"
 
